@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalderonGExamen2.Recarga"
+             Title="Recarga">
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <Label Text="Ingrese su número de teléfono:"/>
+        <Editor x:Name="GabrielC_editor1"
+                Placeholder="Número de teléfono"
+                Text="{Binding Text}"
+                HeightRequest="40" />
+        <Editor x:Name="GabrielC_editor2"
+        Placeholder="Nombre"
+        Text="{Binding Text}"
+        HeightRequest="40" />
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+            <Button x:Name="GabrielC_Boton1"
+                Text="Save"
+                    Clicked="SaveButton_Clicked" />
+
+            <Button x:Name="GabrielC_Boton1"
+                Grid.Column="1"
+                    Text="Delete"
+                    Clicked="DeleteButton_Clicked" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

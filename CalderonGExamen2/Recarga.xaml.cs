@@ -21,7 +21,7 @@ public partial class Recarga : ContentPage
     {
         if (BindingContext is Models.Recarga recarga)
         {
-            File.WriteAllText(recarga.Filename, GabrielC_editor1.Text +" -> " + GabrielC_editor2.Text);
+            File.WriteAllText(recarga.Filename, GabrielC_editor1.Text +" \n " + GabrielC_editor2.Text);
            
         }
             

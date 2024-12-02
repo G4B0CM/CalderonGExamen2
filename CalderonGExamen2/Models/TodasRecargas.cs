@@ -17,12 +17,11 @@ namespace CalderonGExamen2.Models
             Recargas.Clear();
             string appDataPath = FileSystem.AppDataDirectory;
             IEnumerable<Recarga> recargas = Directory
-                                        .EnumerateFiles(appDataPath, "*.GabrielCalderon1.txt")
+                                        .EnumerateFiles(appDataPath, "*.GabrielCalderon2.txt")
 
                                         .Select(filename => new Recarga()
                                         {
                                             Filename = filename,
-                                            telefono = File.ReadAllText(filename),
                                             nombre = File.ReadAllText(filename),
                                             Date = File.GetLastWriteTime(filename)
                                         })

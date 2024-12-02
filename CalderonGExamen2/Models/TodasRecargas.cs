@@ -14,9 +14,10 @@ namespace CalderonGExamen2.Models
            cargarRecarga();
         public void cargarRecarga()
         {
+            Recargas.Clear();
             string appDataPath = FileSystem.AppDataDirectory;
             IEnumerable<Recarga> recargas = Directory
-                                        .EnumerateFiles(appDataPath, "*.GabrielCalderon.txt")
+                                        .EnumerateFiles(appDataPath, "*.GabrielCalderon1.txt")
 
                                         .Select(filename => new Recarga()
                                         {

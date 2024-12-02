@@ -32,21 +32,33 @@
                     Clicked="DeleteButton_Clicked" />
         </Grid>
         <Label 
-            x:Name="GabrielC_Label6"
+            x:Name="GabrielC_Label3"
             Text="Última recarga realizada:"
             FontSize="Header"/>
-        <Label 
-            x:Name="GabrielC_Label3"
-            Text="{Binding telefono}"
-            FontSize="Subtitle"/>
-        <Label 
-            x:Name="GabrielC_Label4"
-            Text="{Binding nombre}"
-            FontSize="Subtitle"/>
-        <Label 
-            x:Name="GabrielC_Label5"
-            Text="{Binding Date}"
-            FontSize="Subtitle"/>
-        
+        <Button 
+    x:Name="GabrielC_Label4"
+    Text="Ir a últimas recargas realizadas:"
+            Clicked="irARecargas"
+    FontSize="Header"/>
+        <CollectionView x:Name="notesCollection"
+                    ItemsSource="{Binding Recargas}"
+                    Margin="20">
+
+            <!-- Designate how the collection of items are laid out -->
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <!-- Define the appearance of each item in the list -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding telefono}" FontSize="22"/>
+                        <Label Text="{Binding nombre}" FontSize="22"/>
+                        <Label Text="{Binding Date}" FontSize="14" TextColor="Silver"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

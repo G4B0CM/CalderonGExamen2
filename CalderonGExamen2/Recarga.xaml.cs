@@ -6,26 +6,23 @@ public partial class Recarga : ContentPage
     {
         set { CargarRecargas(value); }
     }
-    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "GabrielCalderon.txt");
+    string _fileNameNombres = Path.Combine(FileSystem.AppDataDirectory, "GabrielCalderon2.txt");
     public Recarga()
 	{
 		InitializeComponent();
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.GabrielCalderon.txt";
+        string randomFileName = $"{Path.GetRandomFileName()}.GabrielCalderon2.txt";
 
         CargarRecargas(Path.Combine(appDataPath, randomFileName));
-        BindingContext = new Models.TodasRecargas();
+        
     }
-    protected override void OnAppearing()
-    {
-        ((Models.TodasRecargas)BindingContext).cargarRecarga();
-    }
+    
     private async void SaveButton_Clicked(object sender, EventArgs e)
     {
         if (BindingContext is Models.Recarga recarga)
         {
-            File.WriteAllText(recarga.Filename, GabrielC_editor1.Text);
-            File.WriteAllText(recarga.Filename, GabrielC_editor2.Text);
+            File.WriteAllText(recarga.Filename, GabrielC_editor1.Text +" -> " + GabrielC_editor2.Text);
+           
         }
             
         await Shell.Current.GoToAsync("..");
@@ -51,11 +48,15 @@ public partial class Recarga : ContentPage
         if (File.Exists(fileName))
         {
             recargaModelo.Date = File.GetCreationTime(fileName);
-            recargaModelo.telefono = File.ReadAllText(fileName);
             recargaModelo.nombre = File.ReadAllText(fileName);
         }
 
         BindingContext = recargaModelo;
     }
-    
+    private void irARecargas(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new TodasLasRecargas());
+    }
+
+
 }

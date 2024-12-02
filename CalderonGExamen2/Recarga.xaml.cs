@@ -22,9 +22,9 @@ public partial class Recarga : ContentPage
         if (BindingContext is Models.Recarga recarga)
         {
             File.WriteAllText(recarga.Filename, GabrielC_editor1.Text +" \n " + GabrielC_editor2.Text);
-           
+             
         }
-            
+        await DisplayAlert("Exito!", "Se guardo correctamente, presione el boton para seguir a la siguiente página","Ok");
         await Shell.Current.GoToAsync("..");
     }
    

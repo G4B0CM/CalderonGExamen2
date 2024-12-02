@@ -3,22 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalderonGExamen2.Recarga"
              Title="Recarga">
-    <VerticalStackLayout Spacing="10" Margin="5">
+    <VerticalStackLayout Spacing="10" Margin="5" >
         <Label 
             x:Name="GabrielC_Label1"
             Text="Ingrese su número de teléfono:"
             FontSize="Subtitle"/>
         <Editor x:Name="GabrielC_editor1"
                 Placeholder="Número de teléfono"
-                Text="{Binding Text}"
+                Text="{Binding telefono}"
                 HeightRequest="40" />
         <Label 
-    x:Name="GabrielC_Label2"
-    Text="Ingrese su nombre:"
-    FontSize="Subtitle"/>
+            x:Name="GabrielC_Label2"
+            Text="Ingrese su nombre:"
+            FontSize="Subtitle"/>   
         <Editor x:Name="GabrielC_editor2"
         Placeholder="Nombre"
-        Text="{Binding Text}"
+        Text="{Binding nombre}"
         HeightRequest="40" />
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
@@ -37,15 +37,16 @@
             FontSize="Header"/>
         <Label 
             x:Name="GabrielC_Label3"
-            Text="{Binding Text}"
+            Text="{Binding telefono}"
             FontSize="Subtitle"/>
         <Label 
             x:Name="GabrielC_Label4"
-            Text="{Binding Text}"
+            Text="{Binding nombre}"
             FontSize="Subtitle"/>
         <Label 
             x:Name="GabrielC_Label5"
             Text="{Binding Date}"
             FontSize="Subtitle"/>
+        
     </VerticalStackLayout>
 </ContentPage>

@@ -14,14 +14,23 @@ public partial class Recarga : ContentPage
         string randomFileName = $"{Path.GetRandomFileName()}.GabrielCalderon.txt";
 
         CargarRecargas(Path.Combine(appDataPath, randomFileName));
+        BindingContext = new Models.TodasRecargas();
+    }
+    protected override void OnAppearing()
+    {
+        ((Models.TodasRecargas)BindingContext).cargarRecarga();
     }
     private async void SaveButton_Clicked(object sender, EventArgs e)
     {
         if (BindingContext is Models.Recarga recarga)
-            File.WriteAllText(recarga.Filename, TextEditor.Text);
-
+        {
+            File.WriteAllText(recarga.Filename, GabrielC_editor1.Text);
+            File.WriteAllText(recarga.Filename, GabrielC_editor2.Text);
+        }
+            
         await Shell.Current.GoToAsync("..");
     }
+   
 
     private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
@@ -48,4 +57,5 @@ public partial class Recarga : ContentPage
 
         BindingContext = recargaModelo;
     }
+    
 }

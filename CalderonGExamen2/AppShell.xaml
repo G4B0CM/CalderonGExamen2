@@ -15,7 +15,7 @@
 
         <ShellContent
             Title="Gridy"
-            ContentTemplate="{DataTemplate local:AboutPage}"
+            ContentTemplate="{DataTemplate local:Gridy}"
             Icon="{OnPlatform 'https://cdn-icons-png.flaticon.com/512/4566/4566757.png', iOS='https://cdn-icons-png.flaticon.com/512/4566/4566757.png', MacCatalyst='https://cdn-icons-png.flaticon.com/512/4566/4566757.png'}" />
     </TabBar>
 
